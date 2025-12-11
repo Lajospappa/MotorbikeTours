@@ -149,6 +149,7 @@ function distanceMeters(lat1, lon1, lat2, lon2) {
 // A waypointok koordinátái + HTML ID-k
 const points = [
     { id:"interlaken", lat:46.686398, lon:7.835312 },
+    { id:"staubbach", lat:46.594786015882946, lon:7.907441119515217 },
     { id:"brienz", lat:46.688446102753545, lon:7.920706162971783 },
     { id:"holmes", lat:46.727604, lon:8.187007 },
     { id:"grimsel", lat:46.56122, lon:8.337 },
@@ -217,6 +218,41 @@ window.addEventListener("load", () => {
 <h2 id="interlaken">01 Interlaken (Start)</h2>
 
 <!-- ================================ -->
+
+<button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
+    <img src="Interlaken.jpg" class="section-image" alt="Interlaken">
+
+
+<a href="https://www.google.com/maps?q=46.686398,7.835312" target="_blank" class="navbtn">
+📍 Navigáció Interlakenhez
+</a>
+
+<div class="distance-box">
+    <button onclick="measureInterlaken()">Távolság mérése</button>
+    <span id="distInterlaken" class="distance-status">Engedélyezd a GPS-t.</span>
+</div>
+
+<script>
+function measureInterlaken() {
+    navigator.geolocation.getCurrentPosition(pos => {
+        const d = distanceMeters(pos.coords.latitude, pos.coords.longitude, 46.686398, 7.835312);
+        document.getElementById("distInterlaken").textContent = d.toFixed(0) + " méter";
+    });
+}
+</script>
+
+<p>
+Interlaken neve azt jelenti: „a tavak között”, hiszen a Thuni- és Brienzi-tó hordalékkúpján jött létre.
+A város a 19. században lett világhírű üdülőhely: a gőzhajózás és vasút hozta ide a romantika korának utazóit,
+köztük Goethét és Mendelssohnt. A Hohematte füves teréről ma is siklóernyősök indulnak a Jungfrau, a Mönch és az
+Eiger csúcsai felé. Motorral innen indul a nap: a tóvidék békéjéből vezet az út a magas alpesi hágók monumentális világába.
+</p>
+
+
+
+<!-- ================================ -->
+
+<!-- ================================ -->
 <!-- 02 STAUBBACH-VÍZESÉS             -->
 <!-- ================================ -->
 
@@ -272,42 +308,11 @@ A Lauterbrunnen-völgyet gyakran nevezik „a 72 vízesés völgyének”.
 Itt található a Mürrenbach-vízesés, Svájc legmagasabb zuhataga, és a föld alatti Trümmelbach-vízesések is.
 A völgy meredek falai olyanok, mintha egy mesekönyv lapjaira lépnénk.
 </p>
-<button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
-    <img src="Interlaken.jpg" class="section-image" alt="Interlaken">
 
-
-<a href="https://www.google.com/maps?q=46.686398,7.835312" target="_blank" class="navbtn">
-📍 Navigáció Interlakenhez
-</a>
-
-<div class="distance-box">
-    <button onclick="measureInterlaken()">Távolság mérése</button>
-    <span id="distInterlaken" class="distance-status">Engedélyezd a GPS-t.</span>
-</div>
-
-<script>
-function measureInterlaken() {
-    navigator.geolocation.getCurrentPosition(pos => {
-        const d = distanceMeters(pos.coords.latitude, pos.coords.longitude, 46.686398, 7.835312);
-        document.getElementById("distInterlaken").textContent = d.toFixed(0) + " méter";
-    });
-}
-</script>
-
-<p>
-Interlaken neve azt jelenti: „a tavak között”, hiszen a Thuni- és Brienzi-tó hordalékkúpján jött létre.
-A város a 19. században lett világhírű üdülőhely: a gőzhajózás és vasút hozta ide a romantika korának utazóit,
-köztük Goethét és Mendelssohnt. A Hohematte füves teréről ma is siklóernyősök indulnak a Jungfrau, a Mönch és az
-Eiger csúcsai felé. Motorral innen indul a nap: a tóvidék békéjéből vezet az út a magas alpesi hágók monumentális világába.
-</p>
-
-
-
-<!-- ================================ -->
-<!-- 02 BRIENZERSEE                    -->
+<!-- 03 BRIENZERSEE                    -->
 <!-- ================================ -->
 
-<h2 id="brienz">02 Brienzersee (Brienzi-tó)</h2>
+<h2 id="brienz">03 Brienzersee (Brienzi-tó)</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.688446102753545,7.920706162971783" target="_blank" class="navbtn">
@@ -338,10 +343,10 @@ vezet. A motoros útvonal végig a víztükör mellett halad, így ez a nap egyi
 
 
 <!-- ================================ -->
-<!-- 03 SHERLOCK HOLMES MUSEUM         -->
+<!-- 04 SHERLOCK HOLMES MUSEUM         -->
 <!-- ================================ -->
 
-<h2 id="holmes">03 Sherlock Holmes Museum, Meiringen</h2>
+<h2 id="holmes">04 Sherlock Holmes Museum, Meiringen</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.727604,8.187007" target="_blank" class="navbtn">
@@ -373,10 +378,10 @@ különösen drámai helyszínt adnak a történetnek. A Grimsel-hágó felé ve
 
 
 <!-- ================================ -->
-<!-- 04 GRIMSEL-HÁGÓ                   -->
+<!-- 05 GRIMSEL-HÁGÓ                   -->
 <!-- ================================ -->
 
-<h2 id="grimsel">04 Grimsel-hágó – 2164 m</h2>
+<h2 id="grimsel">05 Grimsel-hágó – 2164 m</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.56122,8.337" target="_blank" class="navbtn">
@@ -407,10 +412,10 @@ postakocsi állomások és régi menedékházak nyomaival.
 
 
 <!-- ================================ -->
-<!-- 05 TOTENSEE                        -->
+<!-- 06 TOTENSEE                        -->
 <!-- ================================ -->
 
-<h2 id="totensee">05 Totensee – A Halott tó</h2>
+<h2 id="totensee">06 Totensee – A Halott tó</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.56167307192564,8.337979675207947" target="_blank" class="navbtn">
@@ -441,10 +446,10 @@ A szél, a kő és a víz rideg világa különösen erősen érződik ezen a po
 
 
 <!-- ================================ -->
-<!-- 06 FURKA-HÁGÓ                      -->
+<!-- 07 FURKA-HÁGÓ                      -->
 <!-- ================================ -->
 
-<h2 id="furka">06 Furka-hágó – 2429 m</h2>
+<h2 id="furka">07 Furka-hágó – 2429 m</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.57271,8.41521" target="_blank" class="navbtn">
@@ -472,10 +477,10 @@ A közelben ered a Rhone-gleccser, amely drámai módon húzódik vissza évről
 A hágó híres a Goldfinger című James Bond-film ikonikus autós jeleneteiről, amelyeket itt forgattak.
 </p>
 <!-- ================================ -->
-<!-- 07 TEUFELSBRÜCKE                  -->
+<!-- 08 TEUFELSBRÜCKE                  -->
 <!-- ================================ -->
 
-<h2 id="teufel">07 Teufelsbrücke – Ördög hídja</h2>
+<h2 id="teufel">08 Teufelsbrücke – Ördög hídja</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.647,8.591" target="_blank" class="navbtn">
@@ -512,10 +517,10 @@ A Gotthard-út egyik legikonikusabb szakasza, ahol a történelem, legenda és m
 
 
 <!-- ================================ -->
-<!-- 08 WASSEN – ST. GALLUS TEMPLOM   -->
+<!-- 09 WASSEN – ST. GALLUS TEMPLOM   -->
 <!-- ================================ -->
 
-<h2 id="wassen">08 Wassen – St. Gallus templom</h2>
+<h2 id="wassen">09 Wassen – St. Gallus templom</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.704,8.598" target="_blank" class="navbtn">
@@ -551,10 +556,10 @@ ilyen meredek terepen. Motorral áthaladva a völgy szűkössége és a meredek 
 
 
 <!-- ================================ -->
-<!-- 09 VIERWALDSTÄTTERSEE             -->
+<!-- 10 VIERWALDSTÄTTERSEE             -->
 <!-- ================================ -->
 
-<h2 id="vierwald">09 Vierwaldstättersee – a Lucerni-tó</h2>
+<h2 id="vierwald">10 Vierwaldstättersee – a Lucerni-tó</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.92006359900725,8.594791338622741" target="_blank" class="navbtn">
@@ -590,10 +595,10 @@ meredek sziklafalak, régi gőzhajók, és a svájci államalapítás emlékhely
 
 
 <!-- ================================ -->
-<!-- 10 TELLSKAPELLE                   -->
+<!-- 11 TELLSKAPELLE                   -->
 <!-- ================================ -->
 
-<h2 id="tell">10 Tellskapelle – Wilhelm Tell kápolnája</h2>
+<h2 id="tell">11 Tellskapelle – Wilhelm Tell kápolnája</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.932,8.611" target="_blank" class="navbtn">
@@ -629,10 +634,10 @@ a zsarnokság elleni kiállás szimbóluma, erős vizuális környezetben, a tó
 
 
 <!-- ================================ -->
-<!-- 11 GERSAU                         -->
+<!-- 12 GERSAU                         -->
 <!-- ================================ -->
 
-<h2 id="gersau">11 Gersau – a kis köztársaság</h2>
+<h2 id="gersau">12 Gersau – a kis köztársaság</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=46.991,8.524" target="_blank" class="navbtn">
@@ -668,10 +673,10 @@ A régi polgárházak homlokzatain ma is látszanak a korabeli díszítések és
 
 
 <!-- ================================ -->
-<!-- 12 LUZERN – CÉL                   -->
+<!-- 13 LUZERN – CÉL                   -->
 <!-- ================================ -->
 
-<h2 id="luzern">12 Luzern – Kapellbrücke és Víztorony (Cél)</h2>
+<h2 id="luzern">13 Luzern – Kapellbrücke és Víztorony (Cél)</h2>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
 
 <a href="https://www.google.com/maps?q=47.05048,8.30635" target="_blank" class="navbtn">
