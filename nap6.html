@@ -215,6 +215,63 @@ window.addEventListener("load", () => {
 <!-- ================================ -->
 
 <h2 id="interlaken">01 Interlaken (Start)</h2>
+
+<!-- ================================ -->
+<!-- 02 STAUBBACH-VÍZESÉS             -->
+<!-- ================================ -->
+
+<h2 id="staubbach">02 Staubbach-vízesés</h2>
+<button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
+
+<img src="Staubbach.jpg" class="section-image" alt="Staubbach-vízesés">
+
+<a href="https://maps.app.goo.gl/FZGCqh3AxbCfFjFT6" target="_blank" class="navbtn">
+📍 Navigáció a Staubbach-vízeséshez
+</a>
+
+<div class="distance-box">
+    <button onclick="measureStaubbach()">Távolság mérése</button>
+    <span id="distStaubbach" class="distance-status">Engedélyezd a GPS-t.</span>
+</div>
+
+<script>
+function measureStaubbach() {
+    navigator.geolocation.getCurrentPosition(pos => {
+        const d = distanceMeters(
+            pos.coords.latitude,
+            pos.coords.longitude,
+            46.594786015882946,
+            7.907441119515217
+        );
+        document.getElementById("distStaubbach").textContent =
+            d.toFixed(0) + " méter";
+    });
+}
+</script>
+
+<p>
+Képzeljétek el, hogy egy olyan völgyben álltok, amelyet Goethe is megörökített költészetében: 
+a Lauterbrunnen-völgyben, a „vízesések völgyében”. A Staubbach-vízesés Svájc legmagasabb szabadon zuhanó vízesése,
+közel 297 méteres zuhanással.
+</p>
+
+<p>
+A víz a peremről kilépve szinte finom porrá válik, innen ered a neve is: „Staub” – por.
+Tavasszal és kora nyáron a hóolvadék drámai látványt nyújt.
+</p>
+
+<p><strong>Mitől különleges?</strong><br>
+• Szabadon zuhanó vízív, megtörés nélkül.<br>
+• Ködpermettel táncol a levegőben.<br>
+• Goethe itt írta a „Gesang der Geister über den Wassern” című versét.<br>
+• Nyáron a vízesés mögötti galériára is fel lehet menni.
+</p>
+
+<p>
+A Lauterbrunnen-völgyet gyakran nevezik „a 72 vízesés völgyének”. 
+Itt található a Mürrenbach-vízesés, Svájc legmagasabb zuhataga, és a föld alatti Trümmelbach-vízesések is.
+A völgy meredek falai olyanok, mintha egy mesekönyv lapjaira lépnénk.
+</p>
 <button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
     <img src="Interlaken.jpg" class="section-image" alt="Interlaken">
 
