@@ -256,6 +256,10 @@ window.addEventListener("load", () => {
 <div class="distance-box">
     <button onclick="measureInterlaken()">Távolság mérése</button>
     <span id="distInterlaken" class="distance-status">Engedélyezd a GPS-t.</span>
+
+<h2>A nap útvonala a térképen</h2>
+<img src="6napTérkép.png" class="section-image" alt="Térkép">
+
 </div>
 
 <script>
@@ -661,45 +665,6 @@ a zsarnokság elleni kiállás szimbóluma, erős vizuális környezetben, a tó
 
 <!-- ================================ -->
 <!-- 12 GERSAU                         -->
-<!-- ================================ -->
-
-<h2 id="gersau">12 Gersau – a kis köztársaság</h2>
-<button class="refreshBtn" onclick="refreshPosition()">🔄 Pozíció frissítése</button>
-
-<a href="https://www.google.com/maps?q=46.991,8.524" target="_blank" class="navbtn">
-📍 Navigáció Gersau-hoz
-</a>
-
-<div class="distance-box">
-    <button onclick="measureGersau()">Távolság mérése</button>
-    <span id="distGersau" class="distance-status">Engedélyezd a GPS-t.</span>
-</div>
-
-<script>
-function measureGersau() {
-    navigator.geolocation.getCurrentPosition(pos => {
-        const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
-            46.991, 8.524);
-        document.getElementById("distGersau").textContent = formatDistanceKm(d);
-    });
-}
-</script>
-
-<p>
-Gersau különleges hely: több mint 400 éven át – 1390 és 1817 között –
-a világ egyik legkisebb független köztársasága volt, saját jogrenddel és autonómiával.
-Gazdasága a selyemhernyó-tenyésztésen és gyümölcstermesztésen alapult.
-</p>
-
-<p>
-A település szorosan a tó és a meredek hegyoldal közé szorulva alakult ki.
-A régi polgárházak homlokzatain ma is látszanak a korabeli díszítések és címerek.
-</p>
-
-
-
-<!-- ================================ -->
-<!-- 13 LUZERN – CÉL                   -->
 <!-- ================================ -->
 
 <h2 id="luzern">13 Luzern – Kapellbrücke és Víztorony (Cél)</h2>
