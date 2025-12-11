@@ -148,6 +148,13 @@ img {
 =================================== -->
 
 <script>
+
+function formatDistanceKm(m) {
+    const km = m / 1000;
+    if (km < 0.1) return "Nagyon közel vagy a ponthoz.";
+    return km.toFixed(1).replace(".", ",") + " km";
+}
+
 // Haversine-távolság számítása méterben
 function distanceMeters(lat1, lon1, lat2, lon2) {
     const R = 6371000;
@@ -255,7 +262,7 @@ window.addEventListener("load", () => {
 function measureInterlaken() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude, 46.686398, 7.835312);
-        document.getElementById("distInterlaken").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distInterlaken").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -299,7 +306,7 @@ function measureStaubbach() {
             7.907441119515217
         );
         document.getElementById("distStaubbach").textContent =
-            d.toFixed(0) + " méter";
+            formatDistanceKm(d);
     });
 }
 </script>
@@ -348,7 +355,7 @@ function measureBrienz() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.688446102753545, 7.920706162971783);
-        document.getElementById("distBrienz").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distBrienz").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -382,7 +389,7 @@ function measureHolmes() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.727604, 8.187007);
-        document.getElementById("distHolmes").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distHolmes").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -417,7 +424,7 @@ function measureGrimsel() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.56122, 8.337);
-        document.getElementById("distGrimsel").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distGrimsel").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -451,7 +458,7 @@ function measureTotensee() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.56167307192564, 8.337979675207947);
-        document.getElementById("distTotensee").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distTotensee").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -485,7 +492,7 @@ function measureFurka() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.57271, 8.41521);
-        document.getElementById("distFurka").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distFurka").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -516,7 +523,7 @@ function measureTeufel() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.647, 8.591);
-        document.getElementById("distTeufel").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distTeufel").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -556,7 +563,7 @@ function measureWassen() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.704, 8.598);
-        document.getElementById("distWassen").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distWassen").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -595,7 +602,7 @@ function measureVierwald() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.92006359900725, 8.594791338622741);
-        document.getElementById("distVierwald").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distVierwald").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -634,7 +641,7 @@ function measureTell() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.932, 8.611);
-        document.getElementById("distTell").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distTell").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -673,7 +680,7 @@ function measureGersau() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             46.991, 8.524);
-        document.getElementById("distGersau").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distGersau").textContent = formatDistanceKm(d);
     });
 }
 </script>
@@ -712,7 +719,7 @@ function measureLuzern() {
     navigator.geolocation.getCurrentPosition(pos => {
         const d = distanceMeters(pos.coords.latitude, pos.coords.longitude,
             47.05048, 8.30635);
-        document.getElementById("distLuzern").textContent = d.toFixed(0) + " méter";
+        document.getElementById("distLuzern").textContent = formatDistanceKm(d);
     });
 }
 </script>
