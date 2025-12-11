@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>6. nap – Interlaken → Luzern a Grimsel és Furka hágón át</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: 'Georgia', serif;
+    background: url('LuzernHid.jpg') center/cover no-repeat fixed;
+    margin: 0;
+    padding: 0;
+    color: #f5f2e9;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(0,0,0,0.55);
+    padding: 30px 22px 40px 22px;
+    border-radius: 14px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+h1 {
+    text-align: center;
+    color: #ffe7a3;
+    margin-bottom: 18px;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #ffe7a3;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+/* Képek – most nem használjuk, de meghagyom, ha később tennél be fotót */
+.section-image {
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 14px auto 18px auto;
+    box-shadow: 0 0 16px rgba(0,0,0,0.6);
+}
+
+/* Navigációs gombok – égszínkék */
+.navbtn {
+    display:inline-block;
+    margin: 8px 0 6px 0;
+    padding: 8px 14px;
+    background:#68c7ff;
+    color:#033048;
+    font-weight:bold;
+    font-size:14px;
+    border-radius:7px;
+    text-decoration:none;
+    box-shadow:0 0 8px rgba(0,0,0,0.4);
+}
+
+/* Távolság doboz minden ponthoz */
+.distance-box {
+    margin: 4px 0 16px 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.45);
+    font-size: 15px;
+}
+.distance-box button {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #ffe7a3;
+    color: #2b1b0c;
+    margin-bottom: 4px;
+}
+.distance-box button:active {
+    transform: scale(0.98);
+}
+.distance-status {
+    display: block;
+    margin-top: 2px;
+    font-size: 14px;
+}
+
+/* Főoldal gomb */
+.home {
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 22px;
+    background:#ffe7a3;
+    color:#333;
+    font-weight:bold;
+    border-radius:8px;
+    text-decoration:none;
+    box-shadow:0 0 12px rgba(0,0,0,0.6);
+    font-size:17px;
+}
+
+/* Mobil finomhangolás */
+@media (max-width: 480px) {
+    .container {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 22px 16px 30px 16px;
+    }
+    p { font-size: 17px; }
+    h1 { font-size: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>6. nap – Interlaken → Luzern a Grimsel és Furka hágón át</h1>
+
+<p>Interlakenből indulva a Brienzi tó partján, majd a Grimsel- és Furka-hágó magashegyi világán keresztül ereszkedtek le a Vierwaldstättersee partjára, végül Luzern történelmi belvárosába. Az alábbi pontok a nap logikai állomásai, mindegyiket meg tudjátok nyitni térképen, és a GPS-távolság gombbal megnézhetitek, milyen messze álltok tőle éppen.</p>
+
+<hr>
+
+<h2>01 Interlaken (Start)</h2>
+
+<a href="https://www.google.com/maps?q=46.686398,7.835312" target="_blank" class="navbtn">
+📍 Navigáció Interlakenbe
+</a>
+
+<div class="distance-box">
+    <button id="interlakenBtn">Távolság mérése (GPS)</button>
+    <span id="interlakenText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>Interlaken neve szó szerint azt jelenti, hogy a tavak között, mivel a Thuni tó és a Brienzi tó közötti hordalékkúpon fekszik. A település a Lütschine folyó által feltöltött síkságon jött létre, amelyet eredetileg mocsaras terület fedett. A város a 19. században vált világhírű üdülőhellyé, amikor a gőzhajó és a vasút elérte a két tavat.</p>
+<p>Számos híres utazó és művész megfordult itt, köztük Byron, Goethe és Mendelssohn, akik a Berni Alpok látványát dicsérték. A Hohematte nevű nagy füves tér közepéről gyakran indulnak siklóernyősök, akik a Jungfrau, a Mönch és az Eiger csúcsai előtt lebegnek. Interlaken az egész nap logikai kiindulópontja, itt találkozik a tóvidék világa az igazi magashegyi környezettel. Motorral haladva ebből a sík völgyből indultok el a nagy hágók, gleccservölgyek és magasfennsíkok irányába.</p>
+
+<h2>02 Brienzersee (Brienzi tó)</h2>
+
+<a href="https://www.google.com/maps?q=46.688446102753545,7.920706162971783" target="_blank" class="navbtn">
+📍 Navigáció a Brienzi tóhoz
+</a>
+
+<div class="distance-box">
+    <button id="brienzBtn">Távolság mérése (GPS)</button>
+    <span id="brienzText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>A Brienzi tó Svájc egyik legmélyebb tava, a GPX szerint 260 méteres mélységgel, ami már önmagában is különleges geológiai adat. A tó vizét a gleccserekből érkező apró szemszerű kőzetliszt teszi jellegzetesen türkizzé, mivel a lebegő szemcsék a fényt egy sajátos módon szórják.</p>
+<p>A tó medencéjét a jégkorszak idején egy hatalmas völgyi gleccser vájta ki, ezért a partjai meredekek, és sok helyen szinte közvetlenül a hegyoldal aljában fut az út. A túlparton fekvő Brienz faluja a svájci faszobrászat egyik központja, hagyományos házai és faragott erkélyei a népi kultúra élő emlékei. Ha a tó felett felnéztek, a Brienzer Rothorn csúcsa uralja az északi oldalt, amelyre fogaskerekű vonat kapaszkodik fel. A motoros útvonal hűen követi a tó partját, így a nap egyik legszebb panorámáját itt kapjátok meg.</p>
+
+<h2>03 Sherlock Holmes Museum, Meiringen</h2>
+
+<a href="https://www.google.com/maps?q=46.727604,8.187007" target="_blank" class="navbtn">
+📍 Navigáció a Sherlock Holmes múzeumhoz
+</a>
+
+<div class="distance-box">
+    <button id="holmesBtn">Távolság mérése (GPS)</button>
+    <span id="holmesText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>Meiringen neve a Sherlock Holmes történetek rajongói számára ismerősen cseng, mivel Arthur Conan Doyle itt játszatta le a híres Reichenbach vízesésnél Holmes és Moriarty összecsapását. A falucskában létrehozott Sherlock Holmes Múzeum a korabeli londoni Baker Street hangulatát idézi meg, berendezve Holmes dolgozószobáját és különféle viktoriánus részleteket.</p>
+<p>A választás nem véletlen, Meiringen környékének meredek szurdokai és vízesései egy drámai történet ideális díszletei. A városka maga a Hasli völgy központja, amely a Grimsel hágó felé vezető út kapuja. A környéken több különleges geológiai képződmény és szurdok található, például az Aareschlucht, ahol az Aare folyó szűk, magas falú kanyonban tör át. Ez a pont egy jó emlékeztető arra, hogy az alpesi táj nemcsak természeti látványosság, hanem irodalmi háttér is lehet.</p>
+
+<h2>04 Grimsel hágó – 2164 méter</h2>
+
+<a href="https://www.google.com/maps?q=46.56122,8.337" target="_blank" class="navbtn">
+📍 Navigáció a Grimsel-hágóra
+</a>
+
+<div class="distance-box">
+    <button id="grimselBtn">Távolság mérése (GPS)</button>
+    <span id="grimselText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>A Grimsel hágó a Berni kantont köti össze Valais magasvölgyeivel, és egyben fontos vízválasztó a Rajna és a Rhone vízgyűjtői között. A hágó környékét gránit és gneisz uralja, amelyet a jégkorszak idején hatalmas gleccserek csiszoltak simára.</p>
+<p>A környéken több nagy víztározó tó található, amelyek a svájci vízerőműrendszer részei, és az ország villamosenergia termelésében kulcsszerepet játszanak. A Grimsel történelmi kereskedelmi útvonal, amelyen sót, bort és állatokat szállítottak az Alpok két oldala között. A hágó tetejéről tiszta időben mélyre benézhettek a Hasli völgy irányába és át a Wallis felé.</p>
+
+<h2>05 Totensee, a Halott tó</h2>
+
+<a href="https://www.google.com/maps?q=46.56167307192564,8.337979675207947" target="_blank" class="navbtn">
+📍 Navigáció a Totensee-hez
+</a>
+
+<div class="distance-box">
+    <button id="totenseeBtn">Távolság mérése (GPS)</button>
+    <span id="totenseeText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>A Grimsel hágó platóján fekvő Totensee neve a Napóleon kori csatákra utal, a hagyomány szerint az itt elesett katonák emléke miatt kapta ezt a komor hangzású elnevezést. A tó medencéjét ugyanúgy a gleccser jég vájta ki, mint a környező kistavakét, a vizét pedig főként hóolvadék és csapadék tölti fel.</p>
+<p>A viszonylag csekély, harmincnégy méter körüli mélysége ellenére a tó vize nyáron is kifejezetten hideg, a rövid vegetációs időszak miatt a partja szinte tundraszerű növényzetet hordoz. A környéken gyakoriak a törpefenyők és a zuzmók, amelyek jól alkalmazkodnak a szélsőséges időjárási viszonyokhoz. A Totensee mellett elhaladva különösen jól érzékelhető, milyen zord tud lenni az Alpok felső régiója.</p>
+
+<h2>06 Furka hágó – 2429 méter</h2>
+
+<a href="https://www.google.com/maps?q=46.57271,8.41521" target="_blank" class="navbtn">
+📍 Navigáció a Furka-hágóra
+</a>
+
+<div class="distance-box">
+    <button id="furkaBtn">Távolság mérése (GPS)</button>
+    <span id="furkaText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>A Furka hágó Svájc egyik legmagasabban vezetett közúti hágója, amely Valais és Uri kantonját köti össze. A hágó közelében ered a Rhone gleccser, amely egykor egészen a völgyfenékig húzódott, ma azonban látványosan visszahúzódott a klímaváltozás miatt. A környéken több helyen tábla mutatja, meddig ért a jég a 19. és 20. század különböző éveiben.</p>
+<p>A Furka a popkultúrában is híres, mert itt forgatták a Goldfinger című James Bond film ikonikus autós jeleneteit Sean Conneryvel, a kanyargó útszakasz azóta is fotózási kedvenc. A Furka vonalában haladó régi gőzvontatású szárnyvasút ma múzeumvasútként működik, és a svájci vasúttörténet élő emléke.</p>
+
+<h2>07 Teufelsbrücke, az Ördög hídja – Schöllenen szoros</h2>
+
+<a href="https://www.google.com/maps?q=46.647,8.591" target="_blank" class="navbtn">
+📍 Navigáció az Ördög hídjához
+</a>
+
+<div class="distance-box">
+    <button id="teufelBtn">Távolság mérése (GPS)</button>
+    <span id="teufelText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>A Schöllenen szoros évszázadokon át a Gotthard út legnehezebb szakasza volt, ahol a meredek sziklafalak közé szorított Reuss folyó fölött csak nagy nehézségek árán lehetett hidat építeni. A Teufelsbrücke, vagyis Ördög hídja népi monda szerint úgy épült meg, hogy az uriak alkut kötöttek az ördöggel, aki cserébe az első átkelő lelkét kérte.</p>
+<p>A történet szerint az emberek egy kecskét hajtottak át először, így túljártak az ördög eszén, aki dühében egy hatalmas követ akart a hídra dobni, de egy asszony keresztet vetett a sziklával, ezért leesett. A híd jelenlegi formája több átépítés eredménye, mivel árvizek és háborúk során többször megsérült. A szoros emlékművei ma is felidézik, milyen küzdelmet jelentett a Gotthard út kiépítése.</p>
+
+<h2>08 Wassen, St. Gallus templom</h2>
+
+<a href="https://www.google.com/maps?q=46.704,8.598" target="_blank" class="navbtn">
+📍 Navigáció Wassen templomához
+</a>
+
+<div class="distance-box">
+    <button id="wassenBtn">Távolság mérése (GPS)</button>
+    <span id="wassenText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>Wassen temploma a vasútbarátok és mérnökök egyik kedvenc pontja, mert a Gotthard vasút spirális alagútjai miatt ugyanazt a templomot három különböző magasságban is meg lehet látni a vonatról. A barokk templom a Reuss völgy fölött áll, és évszázadok óta a környék lelki központja.</p>
+<p>A vasúti építkezés a 19. században mérnöki bravúr volt, a spirális alagutak megépítése nélkül nem lehetett volna ilyen meredek terepen biztonságos pályát vezetni. Wassen környéke jó példa arra, hogyan illeszkedik be az emberi infrastruktúra egy nagyon szűk, hegyekkel határolt völgybe.</p>
+
+<h2>09 Vierwaldstättersee, a Lucerni tó</h2>
+
+<a href="https://www.google.com/maps?q=46.92006359900725,8.594791338622741" target="_blank" class="navbtn">
+📍 Navigáció a Lucerni tóhoz
+</a>
+
+<div class="distance-box">
+    <button id="vierwaldBtn">Távolság mérése (GPS)</button>
+    <span id="vierwaldText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>A Vierwaldstättersee, magyarul Lucerni tó neve arra utal, hogy négy erdős kanton határán fekszik, amelyek a svájci állam alapítói közé tartoztak. A tó alakja nagyon tagolt, hosszú, keskeny öblökkel, amelyek mélyen benyúlnak a hegyek közé. A tó maximális mélysége 214 méter.</p>
+<p>A tó partján található a Rütli rét, ahol a hagyomány szerint 1291-ben a három őskanton képviselői esküt tettek a közös védekezésre, ezzel megteremtve a Svájci Konföderáció alapját. Geológiailag a tó glaciális eredetű, a jég mozgása formálta ki a meredek partfalakat és a mély medencét. A tó vizén ma is közlekednek régi gőzhajók.</p>
+
+<h2>10 Tellskapelle, Wilhelm Tell kápolnája</h2>
+
+<a href="https://www.google.com/maps?q=46.932,8.611" target="_blank" class="navbtn">
+📍 Navigáció a Tell-kápolnához
+</a>
+
+<div class="distance-box">
+    <button id="tellBtn">Távolság mérése (GPS)</button>
+    <span id="tellText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>A Sisikon közelében, az Axenstrasse egyik kanyarjában áll a Tellskapelle, egy kis kápolna a tóparti sziklapárkányon. A legenda szerint ezen a ponton ugrott ki Wilhelm Tell Gessler helytartó hajójából, amikor kitört a vihar, és a part felé menekült. A történet a svájci függetlenség egyik alapmítosza, amely a zsarnoksággal szembeni ellenállást jelképezi.</p>
+<p>A kápolna falain freskók ábrázolják Tell életének jeleneteit, köztük a híres almás jelenetet is. Függetlenül attól, hogy a történet történelmi értelemben mennyire pontos, a hely szimbolikus jelentősége óriási a svájci nemzeti identitásban.</p>
+
+<h2>11 Gersau, a kis köztársaság</h2>
+
+<a href="https://www.google.com/maps?q=46.991,8.524" target="_blank" class="navbtn">
+📍 Navigáció Gersau-ba
+</a>
+
+<div class="distance-box">
+    <button id="gersauBtn">Távolság mérése (GPS)</button>
+    <span id="gersauText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>Gersau a Vierwaldstättersee déli partján fekszik, és különlegessége, hogy évszázadokig a világ egyik legkisebb független köztársasága volt. A 14. századtól egészen a 19. század elejéig saját jogrendszerrel és önkormányzattal rendelkezett.</p>
+<p>A falu gazdagsága részben a selyemhernyó tenyésztésnek és a gyümölcstermesztésnek volt köszönhető. A házak homlokzatán ma is láthatók a régi polgárcsaládok címerei és festett díszítései. Gersau példája jól mutatja, milyen sokféle politikai formáció létezett a történelmi Svájc területén.</p>
+
+<h2>12 Luzern, Kapellbrücke és Víztorony (Cél)</h2>
+
+<a href="https://www.google.com/maps?q=47.05048,8.30635" target="_blank" class="navbtn">
+📍 Navigáció Luzern Kapellbrückehez
+</a>
+
+<div class="distance-box">
+    <button id="luzernBtn">Távolság mérése (GPS)</button>
+    <span id="luzernText" class="distance-status">
+        Engedélyezd a helymeghatározást a böngészőben.
+    </span>
+</div>
+
+<p>Luzern városa a Vierwaldstättersee partán fekszik, és a középkor óta fontos kereskedelmi és vallási központ. A Kapellbrücke Európa legrégebbi fedett fahídja, amelyet a 14. században építettek, hogy összekösse a város két részét és védelmi funkciót is betöltsön. A híd közepén álló nyolcszögletű Víztorony eredetileg őrtorony és börtön volt, később irattárként is szolgált.</p>
+<p>A híd belső fa részein eredetileg számos háromszög alakú festett tábla mutatta be Svájc és Luzern történetének fontos jeleneteit, ezek egy részét egy 1993-as tűzvész után restaurálták. Luzern a nap végén nemcsak városi célpont, hanem kulturális csomópont is, ahol a nap alpesi élményei után egy történelmi város hangulatába érkeztek meg. A tóparti sétányról visszanézve még egyszer látszanak a magashegyi hágók iránya felé tornyosuló hegyek, amelyek között aznap átkeltetek.</p>
+
+<div style="text-align:center;">
+    <a href="kek-duna.html" class="home">⬅ Vissza a Kék-Duna túra napjaihoz</a>
+</div>
+
+</div>
+
+<script>
+// Haversine távolság méterben
+function distanceMeters(lat1, lon1, lat2, lon2) {
+    const R = 6371000;
+    const toRad = x => x * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
+function formatDistance(m) {
+    if (m < 5) return "Nagyjából a helyszínen vagytok.";
+    if (m < 1000) return m.toFixed(0) + " méter";
+    return (m / 1000).toFixed(2) + " km";
+}
+
+function setupDistance(buttonId, textId, targetLat, targetLon, label) {
+    const btn = document.getElementById(buttonId);
+    const text = document.getElementById(textId);
+
+    btn.addEventListener("click", function () {
+        if (!("geolocation" in navigator)) {
+            text.textContent = "A böngésző nem támogatja a helymeghatározást.";
+            return;
+        }
+
+        text.textContent = "Helyzet lekérése...";
+
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+            const dist = distanceMeters(lat, lon, targetLat, targetLon);
+            text.textContent =
+                "Jelenlegi távolság " + label + ": " + formatDistance(dist);
+        }, function () {
+            text.textContent =
+                "Nem sikerült lekérni a helyzetet. Ellenőrizd a GPS és a jogosultság beállításait.";
+        }, {
+            enableHighAccuracy: true,
+            maximumAge: 5000,
+            timeout: 10000
+        });
+    });
+}
+
+// Pontok – GPX alapján
+setupDistance("interlakenBtn", "interlakenText",
+    46.686398, 7.835312, "Interlaken központjától");
+
+setupDistance("brienzBtn", "brienzText",
+    46.688446102753545, 7.920706162971783, "a Brienzi tótól");
+
+setupDistance("holmesBtn", "holmesText",
+    46.727604, 8.187007, "a Sherlock Holmes múzeumtól");
+
+setupDistance("grimselBtn", "grimselText",
+    46.56122, 8.337, "a Grimsel-hágótól");
+
+setupDistance("totenseeBtn", "totenseeText",
+    46.56167307192564, 8.337979675207947, "a Totensee-től");
+
+setupDistance("furkaBtn", "furkaText",
+    46.57271, 8.41521, "a Furka-hágótól");
+
+setupDistance("teufelBtn", "teufelText",
+    46.647, 8.591, "az Ördög hídjától");
+
+setupDistance("wassenBtn", "wassenText",
+    46.704, 8.598, "Wassen templomától");
+
+setupDistance("vierwaldBtn", "vierwaldText",
+    46.92006359900725, 8.594791338622741, "a Lucerni tótól");
+
+setupDistance("tellBtn", "tellText",
+    46.932, 8.611, "a Tell-kápolnától");
+
+setupDistance("gersauBtn", "gersauText",
+    46.991, 8.524, "Gersau központjától");
+
+setupDistance("luzernBtn", "luzernText",
+    47.05048, 8.30635, "Luzern Kapellbrückétől");
+</script>
+
+</body>
+</html>
