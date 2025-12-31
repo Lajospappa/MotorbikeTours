@@ -1,84 +1,546 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Korzika motor tura</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Korzika 2026</title>
+
   <style>
-    body { background: #0b0f14; }
-    .card { background: rgba(0,0,0,0.72); }
+    /* ===== RESET ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== BODY + BACKGROUND ===== */
+    body {
+      font-family: "Georgia", serif;
+      background: url("assets/banner_home.jpg") center/cover no-repeat fixed;
+      color: #f3f3f3;
+    }
+
+    /* ===== LAYOUT ===== */
+    .page {
+      min-height: 100vh;
+    }
+
+    /* ===== TOPBAR ===== */
+    .topbar {
+      background: rgba(10, 10, 10, 0.9);
+      border-bottom: 1px solid #333;
+    }
+
+    .topbar .inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand .title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffb300;
+    }
+
+    .brand .subtitle {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 18px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-accent {
+      background: #ffb300;
+      color: #111;
+    }
+
+    .btn-accent:hover {
+      background: #ffca4d;
+      transform: translateY(-1px);
+    }
+
+    /* ===== CONTENT ===== */
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    /* KÉRT FINOMÍTÁS: ne legyen ennyire sötét, mert a keret is sötétít */
+    .card {
+      background: rgba(0, 0, 0, 0.58);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .p {
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* ===== GRID ===== */
+    .grid {
+      margin-top: 26px;
+    }
+
+    .poi {
+      background: linear-gradient(180deg, #111, #050505);
+      border-radius: 16px;
+      padding: 22px;
+      border: 1px solid #222;
+      margin-bottom: 18px;
+    }
+
+    .poi-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .poi-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .coords {
+      font-size: 14px;
+      opacity: 0.85;
+      line-height: 1.45;
+    }
+
+    .coords b {
+      color: #ffb300;
+      font-weight: bold;
+    }
+
+    /* ===== POI BUTTONS ===== */
+    .poibtns {
+      margin-top: 18px;
+    }
+
+    /* ===== TOUR MAP (BOTTOM) ===== */
+    .tourmap-section {
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .tourmap-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      opacity: 0.95;
+    }
+
+    .tourmap-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #222;
+      background: #050505;
+      box-shadow: 0 0 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .tourmap-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .tourmap-marker {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ff2b2b;
+      border: 2px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 0 18px rgba(255, 43, 43, 0.9);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      display: none;
+    }
+
+    .tourmap-note {
+      margin-top: 12px;
+      font-size: 13px;
+      opacity: 0.85;
+      line-height: 1.45;
+    }
+
+    .tourmap-note b {
+      color: #ffb300;
+    }
   </style>
 </head>
+
 <body>
   <div class="page">
+
+    <!-- TOPBAR -->
     <div class="topbar">
       <div class="inner">
         <div class="brand">
-          <div class="title">Korzika motor tura</div>
-          <div class="subtitle">Fooldal</div>
+          <div class="title">Korzika 2026</div>
+          <div class="subtitle">Főoldal</div>
         </div>
       </div>
     </div>
 
+    <!-- CONTENT -->
     <div class="container">
       <div class="card">
-        <div class="h1">Napok</div>
-        <div class="p">A mappa architektura megtartva. A kepek placeholder fajlok (0 byte).</div>
-        <div class="poirows">
-          
-    <div class="poirow">
-      <div>
-        <div class="poirow-title">DAY01 lista nezet</div>
-        <div class="poirow-coord">15 POI</div>
-      </div>
-      <div class="poirow-actions">
-        <a class="btn btn-accent" href="day01/index.html">Megnyitas</a>
-      </div>
-    </div>
 
-    <div class="poirow">
-      <div>
-        <div class="poirow-title">DAY02 lista nezet</div>
-        <div class="poirow-coord">7 POI</div>
-      </div>
-      <div class="poirow-actions">
-        <a class="btn btn-accent" href="day02/index.html">Megnyitas</a>
-      </div>
-    </div>
+        <div class="h1">Útiterv</div>
 
-    <div class="poirow">
-      <div>
-        <div class="poirow-title">DAY03 lista nezet</div>
-        <div class="poirow-coord">12 POI</div>
-      </div>
-      <div class="poirow-actions">
-        <a class="btn btn-accent" href="day03/index.html">Megnyitas</a>
-      </div>
-    </div>
-
-    <div class="poirow">
-      <div>
-        <div class="poirow-title">DAY04 lista nezet</div>
-        <div class="poirow-coord">13 POI</div>
-      </div>
-      <div class="poirow-actions">
-        <a class="btn btn-accent" href="day04/index.html">Megnyitas</a>
-      </div>
-    </div>
-
-    <div class="poirow">
-      <div>
-        <div class="poirow-title">DAY05 lista nezet</div>
-        <div class="poirow-coord">15 POI</div>
-      </div>
-      <div class="poirow-actions">
-        <a class="btn btn-accent" href="day05/index.html">Megnyitas</a>
-      </div>
-    </div>
+        <div class="p">
+          Itt az öt nap belépő oldala van. Minden napon belül van lista nézet,
+          és minden helyszínnek külön oldala.
         </div>
+
+        <div class="grid">
+
+          <!-- DAY01 -->
+          <div class="poi">
+            <div class="poi-head">
+              <div>
+                <div class="poi-title">1. nap · Castagniccia, Corte, Ponte Novu</div>
+                <div class="coords">
+                  <b>15 megálló</b><br>
+                  A Scala di Santa Regina szurdoka után Corte történelmi magja adja a nap gerincét, majd a Castagniccia barokk és függetlenségtörténeti pontjai következnek. A Ponte Novu csatatérnél a táj csendje különösen erős kontraszt a történelmi súllyal.
+                </div>
+              </div>
+            </div>
+
+            <div class="poibtns">
+              <a class="btn btn-accent" href="day01/index.html">Megnyitás</a>
+            </div>
+          </div>
+
+          <!-- DAY02 -->
+          <div class="poi">
+            <div class="poi-head">
+              <div>
+                <div class="poi-title">2. nap · Bastia, Cap Corse, Saint Florent, Niolo</div>
+                <div class="coords">
+                  <b>10 megálló</b><br>
+                  Bastia régi kikötőjétől a Cap Corse gerincének tornyaiig gyorsan felépül a tengeri karakter, Nonza sziklapárkánya pedig ikonikus kontraszt. A Teghime hágó után Murato román temploma ritmusváltás, a nap végére Lozzi már hegyvidéki bázis hangulat.
+                </div>
+              </div>
+            </div>
+
+            <div class="poibtns">
+              <a class="btn btn-accent" href="day02/index.html">Megnyitás</a>
+            </div>
+          </div>
+
+          <!-- DAY03 -->
+          <div class="poi">
+            <div class="poi-head">
+              <div>
+                <div class="poi-title">3. nap · Balagne, Calvi, Porto, Vergio, Niolo</div>
+                <div class="coords">
+                  <b>12 megálló</b><br>
+                  A Paoli alapította Île Rousse és a Calvi citadella után a nyugati part UNESCO tájai viszik a főszerepet, Porto és a Spelunca szurdok látványával. A Vergio környéki magashegyi réteg és a Christ Roi szobor már előkészíti a Niolo fennsík hűvösebb világát.
+                </div>
+              </div>
+            </div>
+
+            <div class="poibtns">
+              <a class="btn btn-accent" href="day03/index.html">Megnyitás</a>
+            </div>
+          </div>
+
+          <!-- DAY04 -->
+          <div class="poi">
+            <div class="poi-head">
+              <div>
+                <div class="poi-title">4. nap · Niolo, Calacuccia tó, Asco völgy, Haut Asco</div>
+                <div class="coords">
+                  <b>16 megálló</b><br>
+                  A Calacuccia gát és a Scala di Santa Regina szurdok műszaki és táji értelemben is nagy napkezdés, utána az Asco völgy szűkületei adják a technikás motoros élményt. A genovai kőhíd és Haut Asco alpesi tere már a Monte Cinto tömegének közvetlen közelsége.
+                </div>
+              </div>
+            </div>
+
+            <div class="poibtns">
+              <a class="btn btn-accent" href="day04/index.html">Megnyitás</a>
+            </div>
+          </div>
+
+          <!-- DAY05 -->
+          <div class="poi">
+            <div class="poi-head">
+              <div>
+                <div class="poi-title">5. nap · Keleti part, Solenzara, Bavella hágó, Zonza</div>
+                <div class="coords">
+                  <b>15 megálló</b><br>
+                  A belső hegyvidékről a Défilé de l’Inzecca és a Sampolo tó hozza le az útvonalat a keleti síkra, majd Solenzara után visszafordul a hegyekbe. A Bavella hágó és a tűk drámai sziluettje a nap vizuális csúcspontja, Zonza pedig stabil bázis a magashegyi hangulat után.
+                </div>
+              </div>
+            </div>
+
+            <div class="poibtns">
+              <a class="btn btn-accent" href="day05/index.html">Megnyitás</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- TOUR MAP BOTTOM -->
+        <div class="tourmap-section">
+          <div class="tourmap-title">Teljes túra térkép (aktuális pozíció jelöléssel)</div>
+
+          <div class="tourmap-wrap" id="tourMapWrap">
+            <img class="tourmap-img" id="tourMapImg" src="assets/Foldal_terkepnézet.png" alt="Korzika 2026 teljes térkép">
+            <div class="tourmap-marker" id="tourMarker" aria-hidden="true"></div>
+          </div>
+
+          <div class="tourmap-note" id="tourMapNote">
+            <b>Megjegyzés:</b> a piros jelölő a böngésző helymeghatározása alapján jelenik meg. Ha a helymeghatározás tiltva van, a jelölő nem fog látszani.
+          </div>
+        </div>
+
       </div>
     </div>
+
   </div>
+
+  <script>
+    (function () {
+      const img = document.getElementById("tourMapImg");
+      const marker = document.getElementById("tourMarker");
+      const note = document.getElementById("tourMapNote");
+
+      // Kontroll pontok: (lat, lon) -> (x, y) pixel az eredeti képen (img.naturalWidth, img.naturalHeight koordináta)
+      // Fontos: a px értékeknek az eredeti PNG pixelrácsához kell tartozniuk.
+      const controlPoints = [
+        { name: "Zonza", lat: 41.750806, lon: 9.174782, x: 446, y: 534 },
+        { name: "Lozzi", lat: 42.347554, lon: 9.019212, x: 1095, y: 393 },
+        { name: "Nyugati part pont", lat: 42.326667, lon: 8.635438, x: 1073, y: 82 },
+        { name: "Cap Corse pont", lat: 42.976269, lon: 9.382087, x: 1799, y: 670 },
+        { name: "Belső pont", lat: 42.397793, lon: 8.920860, x: 1153, y: 315 },
+        { name: "Solenzara környéke", lat: 41.865698, lon: 9.396649, x: 575, y: 718 }
+      ];
+
+      function clamp(v, min, max) {
+        return Math.max(min, Math.min(max, v));
+      }
+
+      function invert3x3(m) {
+        const a = m[0][0], b = m[0][1], c = m[0][2];
+        const d = m[1][0], e = m[1][1], f = m[1][2];
+        const g = m[2][0], h = m[2][1], i = m[2][2];
+
+        const A = (e * i - f * h);
+        const B = -(d * i - f * g);
+        const C = (d * h - e * g);
+        const D = -(b * i - c * h);
+        const E = (a * i - c * g);
+        const F = -(a * h - b * g);
+        const G = (b * f - c * e);
+        const H = -(a * f - c * d);
+        const I = (a * e - b * d);
+
+        const det = a * A + b * B + c * C;
+        if (Math.abs(det) < 1e-12) return null;
+
+        const invDet = 1 / det;
+        return [
+          [A * invDet, D * invDet, G * invDet],
+          [B * invDet, E * invDet, H * invDet],
+          [C * invDet, F * invDet, I * invDet]
+        ];
+      }
+
+      function mulMat3Vec3(m, v) {
+        return [
+          m[0][0] * v[0] + m[0][1] * v[1] + m[0][2] * v[2],
+          m[1][0] * v[0] + m[1][1] * v[1] + m[1][2] * v[2],
+          m[2][0] * v[0] + m[2][1] * v[1] + m[2][2] * v[2]
+        ];
+      }
+
+      function transpose(A) {
+        const r = A.length, c = A[0].length;
+        const T = [];
+        for (let j = 0; j < c; j++) {
+          const row = [];
+          for (let i = 0; i < r; i++) row.push(A[i][j]);
+          T.push(row);
+        }
+        return T;
+      }
+
+      function mul(A, B) {
+        const r = A.length, k = A[0].length, c = B[0].length;
+        const out = Array.from({ length: r }, () => Array(c).fill(0));
+        for (let i = 0; i < r; i++) {
+          for (let j = 0; j < c; j++) {
+            let s = 0;
+            for (let t = 0; t < k; t++) s += A[i][t] * B[t][j];
+            out[i][j] = s;
+          }
+        }
+        return out;
+      }
+
+      function mulMatVec(A, v) {
+        const r = A.length, c = A[0].length;
+        const out = Array(r).fill(0);
+        for (let i = 0; i < r; i++) {
+          let s = 0;
+          for (let j = 0; j < c; j++) s += A[i][j] * v[j];
+          out[i] = s;
+        }
+        return out;
+      }
+
+      // Affin illesztés: x = p0*lon + p1*lat + p2, y = q0*lon + q1*lat + q2
+      function fitAffine(points) {
+        if (!points || points.length < 3) return null;
+
+        const A = points.map(p => [p.lon, p.lat, 1]);
+        const bx = points.map(p => p.x);
+        const by = points.map(p => p.y);
+
+        const AT = transpose(A);
+        const ATA = mul(AT, A); // 3x3
+        const invATA = invert3x3(ATA);
+        if (!invATA) return null;
+
+        const ATbx = mulMatVec(AT, bx); // 3
+        const ATby = mulMatVec(AT, by); // 3
+
+        const px = mulMat3Vec3(invATA, ATbx); // 3
+        const py = mulMat3Vec3(invATA, ATby); // 3
+
+        return { px, py };
+      }
+
+      function latLonToPixel(lat, lon, model) {
+        const x = model.px[0] * lon + model.px[1] * lat + model.px[2];
+        const y = model.py[0] * lon + model.py[1] * lat + model.py[2];
+        return { x, y };
+      }
+
+      function setMarkerAtImagePixel(x, y) {
+        // Átskálázás az aktuális megjelenített méretre
+        const nw = img.naturalWidth || 1;
+        const nh = img.naturalHeight || 1;
+
+        const rect = img.getBoundingClientRect();
+        const sx = rect.width / nw;
+        const sy = rect.height / nh;
+
+        const left = x * sx;
+        const top = y * sy;
+
+        // Kicsi biztonsági clamp, hogy ne csússzon ki
+        const cl = clamp(left, 0, rect.width);
+        const ct = clamp(top, 0, rect.height);
+
+        marker.style.left = cl + "px";
+        marker.style.top = ct + "px";
+        marker.style.display = "block";
+      }
+
+      function showNote(text) {
+        note.textContent = text;
+      }
+
+      function init() {
+        const model = fitAffine(controlPoints);
+        if (!model) {
+          showNote("A térkép illesztés nem sikerült (kevés vagy hibás kontroll pont).");
+          return;
+        }
+
+        if (!navigator.geolocation) {
+          showNote("A böngésző nem támogatja a helymeghatározást, ezért a piros jelölő nem jelenik meg.");
+          return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+
+            const p = latLonToPixel(lat, lon, model);
+            setMarkerAtImagePixel(p.x, p.y);
+
+            showNote("Aktuális pozíció jelölve a térképen.");
+          },
+          (err) => {
+            let msg = "A helymeghatározás nem elérhető, ezért a piros jelölő nem jelenik meg.";
+            if (err && err.code === 1) msg = "A helymeghatározás tiltva van, ezért a piros jelölő nem jelenik meg.";
+            if (err && err.code === 2) msg = "A helymeghatározás nem érhető el (nincs jel), ezért a piros jelölő nem jelenik meg.";
+            if (err && err.code === 3) msg = "A helymeghatározás időtúllépés miatt nem sikerült, ezért a piros jelölő nem jelenik meg.";
+            showNote(msg);
+          },
+          {
+            enableHighAccuracy: true,
+            maximumAge: 15000,
+            timeout: 12000
+          }
+        );
+      }
+
+      // Biztos: akkor indul, ha a kép naturalWidth már ismert
+      if (img.complete) {
+        init();
+      } else {
+        img.addEventListener("load", init);
+      }
+
+      // Resize esetén újra pozícionálunk
+      let resizeTimer = null;
+      window.addEventListener("resize", function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          if (marker.style.display === "block") {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                  const model = fitAffine(controlPoints);
+                  if (!model) return;
+                  const p = latLonToPixel(pos.coords.latitude, pos.coords.longitude, model);
+                  setMarkerAtImagePixel(p.x, p.y);
+                },
+                () => { },
+                { enableHighAccuracy: false, maximumAge: 15000, timeout: 8000 }
+              );
+            }
+          }
+        }, 250);
+      });
+    })();
+  </script>
 </body>
+
 </html>
