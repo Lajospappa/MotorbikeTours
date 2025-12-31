@@ -61,6 +61,8 @@
       font-weight: bold;
       font-size: 14px;
       transition: background 0.2s ease, transform 0.15s ease;
+      margin-right: 10px;
+      margin-top: 8px;
     }
 
     .btn-accent {
@@ -70,6 +72,18 @@
 
     .btn-accent:hover {
       background: #ffca4d;
+      transform: translateY(-1px);
+    }
+
+    /* ÚJ: NAV gomb (sötétebb, de ugyanaz a stílus) */
+    .btn-nav {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-nav:hover {
+      background: rgba(255, 255, 255, 0.18);
       transform: translateY(-1px);
     }
 
@@ -239,6 +253,8 @@
 
             <div class="poibtns">
               <a class="btn btn-accent" href="day01/index.html">Megnyitás</a>
+              <a class="btn btn-nav" target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&origin=42.346651,9.013368&destination=42.346651,9.013368&waypoints=42.358658,9.05998%7C42.30528,9.151193%7C42.304682,9.148414%7C42.303878,9.148548%7C42.27909033428401,9.412401967285973%7C42.376305,9.377361%7C42.374717,9.367915%7C42.382106,9.365654%7C42.423162,9.352895%7C42.427498,9.331423%7C42.437816,9.309002%7C42.435036,9.298189%7C42.463131,9.315195%7C42.4866,9.2812%7C42.487734,9.281473">🧭 GMaps navigáció</a>
             </div>
           </div>
 
@@ -256,6 +272,8 @@
 
             <div class="poibtns">
               <a class="btn btn-accent" href="day02/index.html">Megnyitás</a>
+              <a class="btn btn-nav" target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&origin=42.346651,9.013368&destination=42.346651,9.013368&waypoints=42.695411,9.449519%7C42.774262,9.47636%7C42.905365,9.3728%7C42.68285,9.301656%7C42.679818,9.302238%7C42.6280844,9.3561684%7C42.67712,9.38276%7C42.5416879,9.2976771">🧭 GMaps navigáció</a>
             </div>
           </div>
 
@@ -273,6 +291,10 @@
 
             <div class="poibtns">
               <a class="btn btn-accent" href="day03/index.html">Megnyitás</a>
+              <a class="btn btn-nav" target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&origin=42.346651,9.013368&destination=42.568253,8.760439&waypoints=42.5562767,9.0582241%7C42.59334,9.048421%7C42.635741,8.938554%7C42.599313,8.902105%7C42.58233,8.897603%7C42.58897,8.905409">🧭 GMaps navigáció 1</a>
+              <a class="btn btn-nav" target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&origin=42.568253,8.760439&destination=42.346651,9.013368&waypoints=42.552313,8.73673%7C42.423234,8.723949%7C42.266531,8.705166%7C42.251334,8.761211%7C42.290453,8.87833">🧭 GMaps navigáció 2</a>
             </div>
           </div>
 
@@ -290,6 +312,10 @@
 
             <div class="poibtns">
               <a class="btn btn-accent" href="day04/index.html">Megnyitás</a>
+              <a class="btn btn-nav" target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&origin=42.346651,9.013368&destination=42.465,9.102&waypoints=42.334361,9.019304%7C42.35831,9.05857%7C42.3883538,9.2868123%7C42.437817,9.309028%7C42.462267,9.206204%7C42.477176,9.185817">🧭 GMaps navigáció 1</a>
+              <a class="btn btn-nav" target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&origin=42.465,9.102&destination=42.346651,9.013368&waypoints=42.452898,9.032729%7C42.4468195,9.0314827%7C42.437039,8.995992%7C42.424618,8.965808%7C42.403298,8.921027">🧭 GMaps navigáció 2</a>
             </div>
           </div>
 
@@ -307,6 +333,10 @@
 
             <div class="poibtns">
               <a class="btn btn-accent" href="day05/index.html">Megnyitás</a>
+              <a class="btn btn-nav" target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&origin=42.346651,9.013368&destination=41.7509696,9.17174&waypoints=42.0968251,9.3059395%7C42.095575,9.281474%7C41.910946,9.388454%7C41.858166,9.402219%7C41.833717,9.313208%7C41.795841,9.224671">🧭 GMaps navigáció 1</a>
+              <a class="btn btn-nav" target="_blank"
+                href="https://www.google.com/maps/dir/?api=1&origin=41.7509696,9.17174&destination=42.346651,9.013368&waypoints=41.9175533,9.1343541%7C42.100623,9.210653%7C42.144107,9.1904057%7C42.172115,9.17106%7C42.193181,9.16763">🧭 GMaps navigáció 2</a>
             </div>
           </div>
 
@@ -452,11 +482,9 @@
       function setMarkerAtImagePixel(x, y) {
         // Átskálázás az aktuális megjelenített méretre
         const nw = img.naturalWidth || 1;
-        const nh = img.naturalHeight || 1;
-
         const rect = img.getBoundingClientRect();
         const sx = rect.width / nw;
-        const sy = rect.height / nh;
+        const sy = rect.height / (img.naturalHeight || 1);
 
         const left = x * sx;
         const top = y * sy;
